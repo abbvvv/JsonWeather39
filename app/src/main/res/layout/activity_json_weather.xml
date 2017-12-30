@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:orientation="vertical">
@@ -8,7 +8,8 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:weightSum="1">
+        android:weightSum="1"
+        android:id="@+id/lay">
         <TextView
             android:layout_width="50dp"
             android:layout_height="wrap_content"
@@ -27,21 +28,28 @@
             android:id="@+id/search"
             android:text="查询"/>
     </LinearLayout>
-    <TextView
-        android:layout_width="fill_parent"
+    <ScrollView
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/show_weather"
-        android:layout_weight="1"
-        android:orientation="vertical"/>
+        android:layout_below="@+id/lay">
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/show_weather"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:isScrollContainer="true"/>
+    </ScrollView>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="20dp"
         android:background="@color/footer"
-        android:gravity="right">
+        android:gravity="right"
+        android:layout_alignParentBottom="true">
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Design by:39许思航"/>
     </LinearLayout>
 
-</LinearLayout>
+</RelativeLayout>
